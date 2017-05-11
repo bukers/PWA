@@ -3,18 +3,30 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import {LogrosService} from './services/logros.service';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import {TruncatePipe}   from  './pipes/truncate.pipe';
+import {MaterialModule}  from  '@angular/material';
+import {AppRoutingModule}  from './app-routing.module';
+import { LogroComponent } from './logro/logro.component';
 
+ 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    TruncatePipe,
+    LogroComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MaterialModule.forRoot(),
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [LogrosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
